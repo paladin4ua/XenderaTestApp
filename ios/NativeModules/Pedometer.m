@@ -44,8 +44,7 @@ RCT_REMAP_METHOD(init, initPedometer)
     self.pedometer = [[CMPedometer alloc] init];
     
     [self.pedometer startPedometerUpdatesFromDate:[[NSDate date] dateByAddingTimeInterval: -10] withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
-      
-      NSLog(@"evemntsd-------");
+            
       [self sendEventWithName:ON_ACTIVITY_CHANGED body:@{}];
     }];
   }
